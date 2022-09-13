@@ -1,16 +1,5 @@
-# flutter_project_1
+# Flutter Project #1 ( Flutter Quiz App)
 
-A new Flutter project.
+This is a flutter project I am developing as part of a udemy course. The app is very simple. It is a Quiz app with a few buttons that ask you a series of questions. 
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This is the first app within the course and as such there is very little information regarding styling and such. It also doesn't go into how to write flutter tests or anything majorly intense
