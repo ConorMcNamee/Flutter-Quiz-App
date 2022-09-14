@@ -5,23 +5,22 @@ import 'answer.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp>{
+class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
 
-  var questions = [
-    {'questionText': 'What\'s your favourite color', 'answers': [
-      'Black', 'Red', 'White'
-    ]},
-
-    {'questionText': 'What\'s your favourite animal', 'answers': [
-      'Rabbit', 'Snake', 'Elephant'
-    ]},
-
+  final questions = const [
+    {
+      'questionText': 'What\'s your favourite color',
+      'answers': ['Black', 'Red', 'White']
+    },
+    {
+      'questionText': 'What\'s your favourite animal',
+      'answers': ['Rabbit', 'Snake', 'Elephant']
+    },
   ];
 
   void _answerQuestion() {
@@ -35,21 +34,27 @@ class _MyAppState extends State<MyApp>{
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            title: Text("My First App"),
-          ),
-          body: Column(
-            children: <Widget>[
-              Question(
-                questions[_questionIndex]['questionText'],
-              ),
-
-              ...(questions[_questionIndex]['answers'] as List<String>).map((answer) {
-                return Answer(_answerQuestion, answer);
-              }).toList()
-            ],
-          )),
+        appBar: AppBar(
+          title: Text("My First App"),
+        ),
+        body: _questionIndex < questions.length
+            ? Column(
+                children: <Widget>[
+                  Question(
+                    questions[_questionIndex]['questionText'],
+                  ),
+                  ...(questions[_questionIndex]['answers'] as List<String>)
+                      .map((answer) {
+                    return Answer(_answerQuestion, answer);
+                  }).toList()
+                ],
+              )
+            : Center(
+                child: Text(
+                "Theres no more Questions",
+                style: TextStyle(fontSize: 28),
+              )),
+      ),
     );
   }
 }
-
